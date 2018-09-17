@@ -1,0 +1,32 @@
+<div class="welcomeHeader fadeIn fullSize">
+  <div>
+    <ng-container *ngIf="!done">
+        <div class="subTitle center">Tell me your name player {{ player }}!</div>
+        <small class="small" *ngIf="playerName && playerMoves[playerName.toLowerCase()]" > This name is already taken</small>
+        <div class="flexContainer">
+          <input type="text" placeholder="Your name" [(ngModel)]="playerName">
+        </div>
+        <div class="subTitle center top20">Make your choice!</div>
+        <div class="flexContainer">
+          <i *ngFor="let item of moves" 
+            class="far fa-hand-{{item.name}} fa-7x clickable"
+            [ngClass]="{red: item.name === 'rock', green: item.name === 'scissors', yellow: item.name === 'paper', active: movement === item }"
+            (click)="makeChoice(item)"
+            ></i>
+        </div>
+        <div class="center top20">
+            <small class="small" *ngIf="!playerName"> Player Name is required</small>
+            <button [disabled]='!playerName || !movement || playerMoves[playerName]' (click)="save()">Go</button>
+        </div>
+        <div class="center endButtons">
+            <button [routerLink]="['/intro']" routerLinkActive="router-link-active" >Home</button>
+            <button [routerLink]="['/history']" routerLinkActive="router-link-active" >History</button>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="done">
+        <h1 *ngIf="wins" class="subTitle center">Winner is {{ wins.pname | titlecase  }}!</h1>
+        <h1 *ngIf="!wins" class="subTitle center">Tie!</h1>
+        <button (click)="replay()" style="width: 100%" >Play again</button>
+      </ng-container>
+  </div>
+</div>

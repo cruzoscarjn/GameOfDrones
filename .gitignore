@@ -1,0 +1,8 @@
+node_modules/
+apidoc/
+env-local.yml
+npm-debug.log
+.DS_Store
+.vscode
+.nyc_output
+.env

@@ -1,0 +1,35 @@
+<div class="welcomeHeader fadeIn staticFullSize top20">
+  <div class="center">Tell me your name</div>
+  <div class="center top20">
+    <input type="text" placeholder="Your name" [(ngModel)]="name">
+    <button (click)="search()">Search</button>
+    <button [routerLink]="['/intro']" routerLinkActive="router-link-active" >Home</button>
+    <button [routerLink]="['/game']" routerLinkActive="router-link-active" >Play</button>
+  </div>
+
+ <ng-container *ngIf="data.table.length">
+   <div clasS="center">{{ name | titlecase }} has won {{ data.win }} times and lose {{ data.lose }} times</div>
+   <div class="tableResponsive">
+    <table class="bordered">
+        <thead class="font-size-12">
+          <tr>
+            <th>Player 1</th>
+            <th>Player 2
+            </th>
+            <th>Wins with</th>
+            <th>Winer</th>
+  
+          </tr>
+        </thead>
+        <tbody class="font-size-11">
+          <tr *ngFor="let row of data.table">
+            <td>{{row.player_1}}</td>
+            <td>{{row.player_2}}</td>
+            <td>{{row.wins_with}}</td>
+            <td>{{row.winer}}</td>
+          </tr>
+        </tbody>
+      </table>
+   </div>
+ </ng-container>
+</div>

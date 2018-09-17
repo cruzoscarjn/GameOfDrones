@@ -1,0 +1,29 @@
+.title{
+    text-align: center;
+    font-family: got;
+    font-size: 3rem;
+    color: white;
+}
+
+.subTitle {
+    font-size: 3rem;
+    font-weight: lighter;
+}
+
+.welcomeHeader{
+    padding: 30px 10%;
+}
+
+.handsContainer{
+    display: flex;
+    text-align: center;
+}
+
+.handsContainer>i{
+    flex: 1;
+    margin-top: 20px;
+}
+
+button{
+    margin: 50px 10px;
+}

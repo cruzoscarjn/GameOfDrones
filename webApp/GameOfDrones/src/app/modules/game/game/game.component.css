@@ -1,0 +1,46 @@
+.subTitle {
+    font-size: 3rem;
+    font-weight: lighter;
+}
+
+.welcomeHeader{
+    padding: 30px 10%;
+}
+
+.flexContainer{
+    display: flex;
+    text-align: center;
+}
+.flexContainer>input{
+    flex: 1;
+    margin-top: 20px;
+}
+
+.flexContainer>i{
+    flex: 1;
+    margin-top: 20px;
+}
+.clickable{
+    padding: 10px;
+    border-radius: 3rem;
+}
+
+.clickable:hover {
+    background: #00afc4;
+    color: white;
+}
+
+.endButtons>button{
+    margin: 50px 10px;
+}
+
+.clickable.active{
+    background: #f95e00;
+    color: white;
+
+}
+.small {
+    display: block;
+    color: #f95e00;
+    margin: 5px 0px;
+}
